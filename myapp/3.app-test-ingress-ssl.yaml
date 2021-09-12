@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+  namespace: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: nginx
+spec:
+  # backend:
+  #   serviceName: nginx-ingress-default-backend
+  #   servicePort: 80
+  tls:
+    - hosts:
+      - xuanthulab.test
+      secretName: default-server-secret
+  rules:
+  - host: xuanthulab.test
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: http-test-svc
+            port: 
+              number: 80
