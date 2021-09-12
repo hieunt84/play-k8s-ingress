@@ -1,13 +1,19 @@
-Error: rendered manifests contain a resource that already exists. Unable to continue with install: IngressClass "nginx" in namespace "" exists and cannot be imported into the current release: invalid ownership metadata; label validation error: missing key "app.kubernetes.io/managed-by": must be set to "Helm"; annotation validation error: missing key "meta.helm.sh/release-name": must be set to "test"; annotation validation error: missing key "meta.helm.sh/release-namespace": must be set to "test-ingress"
----
+### Error
+- Error: rendered manifests contain a resource that already exists. Unable to continue with install: IngressClass "nginx" in namespace "" exists and cannot be imported into the current release: invalid ownership metadata; label validation error: missing key "app.kubernetes.io/managed-by": must be set to "Helm"; annotation validation error: missing key "meta.helm.sh/release-name": must be set to "test"; annotation validation error: missing key "meta.helm.sh/release-namespace": must be set to "test-ingress"
+
+### Resolve
+```console
 kubectl get IngressClass
 NAME    CONTROLLER                     PARAMETERS   AGE
 nginx   nginx.org/ingress-controller   <none>       12h
 
-helm install test ingress-nginx/ingress-nginx -n test-ingress
-helm install test ingress-nginx/ingress-nginx
----
-[root@master-product-01 k8s]# helm install test ingress-nginx/ingress-nginx
+kubectl delete IngressClass nginx
+
+helm install ingress ingress-nginx/ingress-nginx
+```
+### Result
+```console
+[root@master-product-01 k8s]# helm install ingress ingress-nginx/ingress-nginx
 NAME: test
 LAST DEPLOYED: Sun Sep 12 09:50:13 2021
 NAMESPACE: default
@@ -55,3 +61,4 @@ If TLS is enabled for the Ingress, a Secret containing the certificate and key m
     tls.crt: <base64 encoded cert>
     tls.key: <base64 encoded key>
   type: kubernetes.io/tls
+```
