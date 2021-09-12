@@ -523,7 +523,7 @@ ingress:
   enabled: true
   ## @param ingress.certManager Add the corresponding annotations for cert-manager integration
   ##
-  certManager: false
+  certManager: true
   ## @param ingress.pathType Ingress path type
   ##
   pathType: ImplementationSpecific
@@ -553,7 +553,7 @@ ingress:
   ##   - Relay on cert-manager to create it by setting `ingress.certManager=true`
   ##   - Relay on Helm to create self-signed certificates by setting `ingress.tls=true` and `ingress.certManager=false`
   ##
-  tls: false
+  tls: true
   ## @param ingress.extraHosts An array with additional hostname(s) to be covered with the ingress record
   ## e.g:
   ## extraHosts:
