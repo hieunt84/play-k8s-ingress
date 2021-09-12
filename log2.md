@@ -1,0 +1,1 @@
+Error: Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": Post "https://ingress-ingress-nginx-controller-admission.default.svc:443/networking/v1/ingresses?timeout=10s": context deadline exceeded
