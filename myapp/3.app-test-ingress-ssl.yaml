@@ -15,7 +15,7 @@ spec:
       - test.phuthinhtravel.vn
       secretName: default-server-secret
   rules:
-  - host: xuanthulab.test
+  - host: test.phuthinhtravel.vn
     http:
       paths:
       - path: /
