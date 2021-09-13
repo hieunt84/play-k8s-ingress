@@ -1,7 +1,7 @@
 # play-k8s-ingress
 - Deploy using helm chart
 
-### Ref what is ingress?
+### Ref what is ingress, ingress controller?
 - https://xuanthulab.net/su-dung-ingress-trong-kubernetes.html
 - https://www.youtube.com/watch?v=80Ew_fsV4rM&list=WL&index=12
 - https://www.youtube.com/watch?v=OM_N0jjghqI&list=WL&index=13
@@ -12,6 +12,8 @@
 - https://www.youtube.com/watch?v=chwofyGr80c&list=WL&index=7
 - https://www.youtube.com/watch?v=7K0gAYmWWho&list=WL&index=7&t=20s
 
-### Ingress and MetalLB
+### Using Kubernetes Ingress with MetalLB
 - https://www.youtube.com/watch?v=UvwtALIb2U8
+
+### What is MetalLB
 - https://www.youtube.com/watch?v=2SmYjj-GFnE
