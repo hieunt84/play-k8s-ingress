@@ -12,7 +12,7 @@ spec:
   #   servicePort: 80
   rules:
     # Tên miền truy cập
-  - host: xuanthulab.test
+  - host: test.phuthinhtravel.vn
     http:
       paths:
       - path: /
