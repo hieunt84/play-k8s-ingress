@@ -600,8 +600,7 @@ ingress:
   ##       ...
   ##       -----END CERTIFICATE-----
   ##
-  secrets:
-    - name: default-server-secret
+  secrets: []
 
 ## @section Persistence Parameters
 
