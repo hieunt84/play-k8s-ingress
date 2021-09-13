@@ -553,14 +553,16 @@ ingress:
   ##   - Relay on cert-manager to create it by setting `ingress.certManager=true`
   ##   - Relay on Helm to create self-signed certificates by setting `ingress.tls=true` and `ingress.certManager=false`
   ##
-  tls: false
+  tls: true
   ## @param ingress.extraHosts An array with additional hostname(s) to be covered with the ingress record
   ## e.g:
   ## extraHosts:
   ##   - name: wordpress.local
   ##     path: /
   ##
-  extraHosts: []
+  extraHosts:
+    - name: wordpress.local
+      path: /
   ## @param ingress.extraPaths An array with additional arbitrary paths that may need to be added to the ingress under the main host
   ## e.g:
   ## extraPaths:
@@ -598,7 +600,8 @@ ingress:
   ##       ...
   ##       -----END CERTIFICATE-----
   ##
-  secrets: []
+  secrets:
+    - name: default-server-secret
 
 ## @section Persistence Parameters
 
