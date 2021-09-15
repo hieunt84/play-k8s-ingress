@@ -1,19 +1,26 @@
-### Error
-- Error: rendered manifests contain a resource that already exists. Unable to continue with install: IngressClass "nginx" in namespace "" exists and cannot be imported into the current release: invalid ownership metadata; label validation error: missing key "app.kubernetes.io/managed-by": must be set to "Helm"; annotation validation error: missing key "meta.helm.sh/release-name": must be set to "test"; annotation validation error: missing key "meta.helm.sh/release-namespace": must be set to "test-ingress"
+### Manual deployment ingress controller
+- depoly using helm
 
-### Resolve
+- Step 1: config in values.yaml
 ```console
-kubectl get IngressClass
-NAME    CONTROLLER                     PARAMETERS   AGE
-nginx   nginx.org/ingress-controller   <none>       12h
-
-kubectl delete IngressClass nginx
-
-helm install ingress ingress-nginx/ingress-nginx
+hostNetwork: true
+hostPort:
+    enabled: true
+kind: DaemonSet
 ```
+
+- Step 2: create namespace ingress-nginx
+```console
+kubectl create ns ingress-nginx
+```
+
+- Step 3: install ingerss controller
+```
+helm install myingress ingress-nginx/ingress-nginx -n ingress-nginx -f ./values.yaml
+``` 
+
 ### Result
 ```console
-[root@master-product-01 k8s]# helm install ingress ingress-nginx/ingress-nginx
 NAME: test
 LAST DEPLOYED: Sun Sep 12 09:50:13 2021
 NAMESPACE: default
@@ -61,4 +68,10 @@ If TLS is enabled for the Ingress, a Secret containing the certificate and key m
     tls.crt: <base64 encoded cert>
     tls.key: <base64 encoded key>
   type: kubernetes.io/tls
+```
+
+### Ref
+```console
+- https://www.youtube.com/watch?v=UvwtALIb2U8&t=426s
+- https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
 ```
