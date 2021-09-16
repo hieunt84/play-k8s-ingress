@@ -1,29 +1,29 @@
 ### Manual deployment ingress controller ambassador
-- depoly using helm
-
-- Step 1: config in values.yaml
-```console
-hostNetwork: true
-hostPort:
-    enabled: true
-kind: DaemonSet
+1. Step 01 : add repo
+```
+helm repo add datawire https://getambassador.io
+helm repo update
+helm show values datawire/ambassador > values.yaml
 ```
 
-- Step 2: create namespace ingress-nginx
-```console
-kubectl create ns ingress-nginx
+2. Step 02: config in values.yaml
+```
+replicaCount: 2
+daemonSet: true
 ```
 
-- Step 3: install ingerss controller
+3. Step 03: install
 ```
-helm install myingress ingress-nginx/ingress-nginx -n ingress-nginx -f ./values.yaml
+kubectl create namespace ambassador
+helm install ambassador datawire/ambassador -n ambassador -f ./values.yaml
 ``` 
 
 ### Result
 
 ### Ref
-```console
+```
 - https://www.youtube.com/watch?v=PCMdUj5kGHU
+- https://artifacthub.io/packages/helm/datawire/ambassador
 - https://www.learncloudnative.com/blog/2020-06-24-ssl-ambassador-lets-encrypt
 - https://www.getambassador.io/docs/edge-stack/latest/howtos/cert-manager/
 

@@ -1,7 +1,7 @@
 #!/bin/bash
-# ref https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+# ref https://artifacthub.io/packages/helm/datawire/ambassador
 
-kubectl create ns ingress-nginx
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo add datawire https://getambassador.io
 helm repo update
-helm install myingress ingress-nginx/ingress-nginx -n ingress-nginx -f ./values.yaml
+kubectl create namespace ambassador
+helm install ambassador datawire/ambassador -n ambassador -f ./values.yaml
