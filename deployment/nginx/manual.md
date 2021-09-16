@@ -1,4 +1,4 @@
-### Manual deployment ingress controller
+### Manual deployment ingress controller nginx
 - depoly using helm
 
 - Step 1: config in values.yaml
