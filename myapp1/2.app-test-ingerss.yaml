@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: app
+  annotations:
+    kubernetes.io/ingress.class: ambassador
+spec:
+  # backend:
+  #   serviceName: nginx-ingress-default-backend
+  #   servicePort: 80
+  rules:
+    # Tên miền truy cập
+  - host: demo1.hit.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: http-test-svc
+          servicePort: 80
