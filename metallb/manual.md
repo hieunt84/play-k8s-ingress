@@ -1,4 +1,4 @@
-### Manual deployment ingress controller
+### Manual deployment
 - Step 1: config in values.yaml
 ```
 configInline:

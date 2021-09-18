@@ -1,5 +1,2 @@
 ### Target
-- enable ingress
-
-### Environment
-- Cluster k8s on-primies
+- deploy wordpress cluster k8s on-primies

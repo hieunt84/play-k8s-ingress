@@ -2,4 +2,5 @@
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-helm install wp-test bitnami/wordpress -f values.yaml
+kubectl create ns wordpress-test
+helm install wp-test bitnami/wordpress -n wordpress-test -f values.yaml
