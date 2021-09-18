@@ -1,8 +1,6 @@
 ### Manual deployment ingress controller nginx
-- depoly using helm
-
 - Step 1: config in values.yaml
-```console
+```
 hostNetwork: true
 hostPort:
     enabled: true
@@ -10,7 +8,7 @@ kind: DaemonSet
 ```
 
 - Step 2: create namespace ingress-nginx
-```console
+```
 kubectl create ns ingress-nginx
 ```
 

@@ -125,7 +125,7 @@ wordpressScheme: http
 ## NOTE: useful if you use an external database that already contains WordPress data
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#connect-wordpress-docker-container-to-an-existing-database
 ##
-wordpressSkipInstall: true
+wordpressSkipInstall: false
 ## @param wordpressExtraConfigContent Add extra content to the default wp-config.php file
 ## e.g:
 ## wordpressExtraConfigContent: |
