@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: httpdapp-svc
+spec:
+  host: demo1.hit.local
+  prefix: /
+  service: http-test-svc.myapp2:80

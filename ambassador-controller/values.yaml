@@ -11,8 +11,8 @@ fullnameOverride: ''
 # Defaults to .Release.Namespace
 namespaceOverride: ''
 
-replicaCount: 2
-daemonSet: true
+replicaCount: 1
+daemonSet: false
 
 # This will enable the test-ready Pod (https://github.com/datawire/ambassador-chart/blob/master/templates/tests/test-ready.yaml).
 # It will spawn a busybox container to call Ambassador's check_ready endpoint to validate it is working correctly.

@@ -1,20 +1,14 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: app
+  name: nginx-hello
   annotations:
     kubernetes.io/ingress.class: ambassador
 spec:
-  # backend:
-  #   serviceName: nginx-ingress-default-backend
-  #   servicePort: 80
   rules:
-    # Tên miền truy cập
   - host: demo3.hit.local
     http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          serviceName: nginx-hello
-          servicePort: 80
+        - backend:
+            serviceName: nginx-hello
+            servicePort: 80

@@ -8,8 +8,8 @@ helm show values datawire/ambassador > values.yaml
 
 2. Step 02: config in values.yaml
 ```
-replicaCount: 2
-daemonSet: true
+replicaCount: 
+daemonSet:
 ```
 
 3. Step 03: install

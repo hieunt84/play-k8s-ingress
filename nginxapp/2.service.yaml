@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: nginx-hello
+    app: nginx
   ports:
     - protocol: TCP
       port: 80
