@@ -1,16 +1,16 @@
 #!/bin/bash
 
 ##########################################################################################
-# SECTION 01: PREPARE
+# SECTION 01: PREPARE ENVIRONMENT LOCALHOST/VAGRANT
 
 # change root
 sudo -i
 sleep 1
 
 # update system
-# yum clean all
-# yum -y update
-# sleep 1
+yum clean all
+yum -y update
+sleep 1
 
 # config timezone
 timedatectl set-timezone Asia/Ho_Chi_Minh
@@ -136,7 +136,7 @@ chmod 755 /var/www/html/config
 kubectl get nodes
 
 #########################################################################################
-# SECTION 04: CONFIG 
+# SECTION 04: CONFIG ALLOW DEPLOY POD ON MASTER NODE
 # Cho phép pod triển khai trên master
 kubectl taint node master-test-01 node-role.kubernetes.io/master-
 

@@ -1,5 +1,5 @@
 # play-k8s-ingress
-- Deploy using helm chart
+- Deploy ingress-controller-ngix using helm chart
 
 ### Ref what is ingress, ingress controller?
 - https://xuanthulab.net/su-dung-ingress-trong-kubernetes.html
