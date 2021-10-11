@@ -13,6 +13,7 @@ PATH=$PATH:/usr/local/bin
 export PATH
 EOF
 
+# chưa chạy
 source /root/.bash_profile
 
 # Install helm
